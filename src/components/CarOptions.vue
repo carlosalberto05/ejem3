@@ -4,7 +4,7 @@
   <p>Modelo: {{ model }}</p>
   <p>Potencia: {{ power }}</p>
 
-  <button @click="upPower(100)">Aumentar</button>
+  <button @click="upPower(50)">Aumentar</button>
   <button @click="downPower">Disminuir</button>
 </template>
 
@@ -18,11 +18,13 @@ export default {
     };
   },
   methods: {
-    upPower(newPower) {
-      console.log("Aumentando potencia ->" + newPower);
+    upPower(nuevoPower) {
+      console.log("Aumentando potencia");
+      this.power = this.power + nuevoPower;
     },
     downPower() {
       console.log("Disminuir potencia");
+      this.power = this.power - 1;
     },
   },
 };
